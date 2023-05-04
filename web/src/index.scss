@@ -1,0 +1,113 @@
+$colorPrimary: #1A212C;
+$colorSecondary: #646CFFAA;
+$colorTextLight: #FFFFFF;
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: $colorTextLight;
+    background-color: $colorPrimary;
+    background-image: url('../src/assets/doodle.png');
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+    filter: drop-shadow(0 0 2em $colorSecondary);
+}
+
+
+a {
+    font-weight: 500;
+    color: $colorSecondary;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: $colorSecondary;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+.description {
+    padding: 2em;
+}
+
+.copyright {
+    color: $colorTextLight;
+}
+
+.loading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+}
+
+.loading__circle {
+    --size__loading: 0.6em;
+    width: var(--size__loading);
+    height: var(--size__loading);
+    border-radius: 50%;
+    animation: loading__circle__jumping 2s infinite;
+    background-color: #B499FF;
+}
+
+.loading__circle:nth-child(2n) {
+    animation-delay: 300ms;
+    background-color: #E499FF;
+}
+
+.loading__circle:nth-child(3n) {
+    animation-delay: 600ms;
+}
+
+@keyframes loading__circle__jumping {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-15px) scale(0.5);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(5px) scale(0.9);
+    }
+}
